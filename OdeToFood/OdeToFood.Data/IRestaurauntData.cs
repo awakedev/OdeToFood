@@ -22,7 +22,9 @@ namespace OdeToFood.Data
                 new Restauraunt { Id = 1, Name = "Corry's Pizza", Location = "Belfast", Cuisine = CuisineType.Italian},
                 new Restauraunt { Id = 1, Name = "Ganges", Location = "North India", Cuisine = CuisineType.Indian},
                 new Restauraunt { Id = 1, Name = "Tims Taco's", Location = "Mexico City", Cuisine = CuisineType.Mexican},
-                new Restauraunt { Id = 1, Name = "Krissys", Location = "Bangor", Cuisine = CuisineType.None}
+                new Restauraunt { Id = 1, Name = "Krissys", Location = "Bangor", Cuisine = CuisineType.None},
+                new Restauraunt { Id = 1, Name = "Jens", Location = "Blackburn", Cuisine = CuisineType.None}
+
             };
         }
 
