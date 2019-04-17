@@ -38,9 +38,18 @@
                    asp-route-restaurauntId="@restauraunt.Id">
                     <span class="glyphicon glyphicon-edit"></span>
                 </a>
+                <a class="btn btn-lg"
+                   asp-page="./Delete"
+                   asp-route-restaurauntId="@restauraunt.Id">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
             </td>
         </tr>
     }
 </table>
 
-<div>@Model.Message</div>
+<a asp-page=".\Edit" class="btn btn-primary">Add New</a>
+
+@section footer  {
+    <div>@Model.Message</div>
+}

@@ -24,10 +24,17 @@ namespace OdeToFood.Pages.Restauraunts
             this.htmlHelper = htmlHelper;
         }
 
-        public IActionResult OnGet(int restaurauntId)
+        public IActionResult OnGet(int? restaurauntId)
         {
             Cuisines = htmlHelper.GetEnumSelectList<CuisineType>();
-            Restauraunt = restaurauntData.GetById(restaurauntId);
+            if (restaurauntId.HasValue)
+            {
+                Restauraunt = restaurauntData.GetById(restaurauntId.Value);
+            }
+            else
+            {
+                Restauraunt = new Restauraunt();
+            }
             if (Restauraunt == null)
             {
                 return RedirectToPage("/.NotFound");
@@ -37,10 +44,23 @@ namespace OdeToFood.Pages.Restauraunts
 
         public IActionResult OnPost()
         {
-            Cuisines = htmlHelper.GetEnumSelectList<CuisineType>();
-            Restauraunt = restaurauntData.Update(Restauraunt);
+            if (!ModelState.IsValid)
+            {
+                Cuisines = htmlHelper.GetEnumSelectList<CuisineType>();
+                return Page();
+            }
+
+            if (Restauraunt.Id > 0)
+            {
+                restaurauntData.Update(Restauraunt);
+            }
+            else
+            {
+                restaurauntData.Add(Restauraunt);
+            }
             restaurauntData.Commit();
-            return Page();
+            TempData["Message"] = "Restauraunt saved!";
+            return RedirectToPage("./Detail", new { restaurauntId = Restauraunt.Id });
         }
     }
 }

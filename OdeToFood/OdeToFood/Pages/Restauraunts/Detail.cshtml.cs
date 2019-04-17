@@ -8,6 +8,10 @@ namespace OdeToFood.Pages.Restauraunts
     public class DetailModel : PageModel
     {
         private readonly IRestaurauntData restaurauntData;
+
+        [TempData]
+        public string Message { get; set; }
+
         public Restauraunt Restauraunt { get; set; }
         public IRestaurauntData RestaurauntData { get; }
 
