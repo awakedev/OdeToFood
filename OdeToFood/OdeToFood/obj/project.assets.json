@@ -2914,6 +2914,34 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "OdeToCode.AddFeatureFolders/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/OdeToCode.AddFeatureFolders.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OdeToCode.AddFeatureFolders.dll": {}
+        }
+      },
+      "OdeToCode.UseNodeModules/1.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.2",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.2",
+          "Microsoft.AspNetCore.StaticFiles": "2.0.2",
+          "Microsoft.Extensions.FileProviders.Physical": "2.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/OdeToCode.UseNodeModules.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OdeToCode.UseNodeModules.dll": {}
+        }
+      },
       "popper.js/1.14.0": {
         "type": "package"
       },
@@ -8264,6 +8292,33 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "OdeToCode.AddFeatureFolders/2.0.3": {
+      "sha512": "4gtKrvi/L39sBSa9fyiL/fHvp7IH5I/Q25ujw8r0TgOpS++WDHlk6X0+FXhFvGvf751it5ujXpvnFa4dTsFmEg==",
+      "type": "package",
+      "path": "odetocode.addfeaturefolders/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/OdeToCode.AddFeatureFolders.dll",
+        "lib/netstandard1.6/OdeToCode.AddFeatureFolders.dll",
+        "lib/netstandard2.0/OdeToCode.AddFeatureFolders.dll",
+        "odetocode.addfeaturefolders.2.0.3.nupkg.sha512",
+        "odetocode.addfeaturefolders.nuspec"
+      ]
+    },
+    "OdeToCode.UseNodeModules/1.0.6": {
+      "sha512": "mE838R7RdMaQ3csLrWMCeeG8UtL5jdfEFlYjRTit6EfOTB17sLoV/tmNdAXl59ht0Rcb+9m3t9rqyC7gVEz21A==",
+      "type": "package",
+      "path": "odetocode.usenodemodules/1.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/OdeToCode.UseNodeModules.dll",
+        "lib/netstandard2.0/OdeToCode.UseNodeModules.dll",
+        "odetocode.usenodemodules.1.0.6.nupkg.sha512",
+        "odetocode.usenodemodules.nuspec"
+      ]
+    },
     "popper.js/1.14.0": {
       "sha512": "SPxZdXknelgQ015wey7GMZvsVdt/SyEmHYORhEp5k/uF9MUk9DPtkn+6dR98fud2hVWJjZm9KKr474+r7WQt+A==",
       "type": "package",
@@ -13161,6 +13216,8 @@
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
       "Newtonsoft.Json >= 12.0.1",
+      "OdeToCode.AddFeatureFolders >= 2.0.3",
+      "OdeToCode.UseNodeModules >= 1.0.6",
       "OdeToFood.Data >= 1.0.0",
       "bootstrap >= 4.3.1"
     ]
@@ -13239,6 +13296,14 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.1, )"
+          },
+          "OdeToCode.AddFeatureFolders": {
+            "target": "Package",
+            "version": "[2.0.3, )"
+          },
+          "OdeToCode.UseNodeModules": {
+            "target": "Package",
+            "version": "[1.0.6, )"
           },
           "bootstrap": {
             "target": "Package",
