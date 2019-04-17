@@ -9,6 +9,12 @@ namespace OdeToFood.Data
     public interface IRestaurauntData
     {
         IEnumerable<Restauraunt> GetRestaurauntsByName(string name);
+
+        Restauraunt GetById(int id);
+
+        Restauraunt Update(Restauraunt updatedRestauraunt);
+
+        int Commit();
     }
 
     public class InMemoryRestaurauntData : IRestaurauntData
@@ -25,6 +31,28 @@ namespace OdeToFood.Data
                 new Restauraunt { Id = 4, Name = "Krissys", Location = "Bangor", Cuisine = CuisineType.None},
                 new Restauraunt { Id = 5, Name = "Jens", Location = "Blackburn", Cuisine = CuisineType.None}
             };
+        }
+
+        public Restauraunt GetById(int id)
+        {
+            return restauraunts.SingleOrDefault(r => r.Id == id);
+        }
+
+        public Restauraunt Update(Restauraunt updatedRestauraunt)
+        {
+            var restauraunt = restauraunts.SingleOrDefault(r => r.Id == updatedRestauraunt.Id);
+            if (restauraunt != null)
+            {
+                restauraunt.Name = updatedRestauraunt.Name;
+                restauraunt.Name = updatedRestauraunt.Name;
+                restauraunt.Name = updatedRestauraunt.Name;
+            }
+            return restauraunt;
+        }
+
+        public int Commit()
+        {
+            return 0;
         }
 
         public IEnumerable<Restauraunt> GetAll()

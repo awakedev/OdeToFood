@@ -13,7 +13,7 @@
                    asp-for="SearchTerm" />
             <span class="input-group-btn">
                 <button class="btn btn-default">
-                    <i class="glpyhicon glyphicon-search"></i>
+                    <span class="glpyhicon glyphicon-search"></span>
                 </button>
             </span>
         </div>
@@ -31,10 +31,16 @@
                 <a class="btn btn-lg"
                    asp-page="./Detail"
                    asp-route-restaurauntId="@restauraunt.Id">
-                    <i class="glpyhicon glyphicon-barcode"></i>
+                    <span class="glyphicon glyphicon-zoom-in"></span>
+                </a>
+                <a class="btn btn-lg"
+                   asp-page="./Edit"
+                   asp-route-restaurauntId="@restauraunt.Id">
+                    <span class="glyphicon glyphicon-edit"></span>
                 </a>
             </td>
         </tr>
     }
 </table>
+
 <div>@Model.Message</div>

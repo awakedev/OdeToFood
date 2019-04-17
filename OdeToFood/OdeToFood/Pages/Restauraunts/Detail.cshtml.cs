@@ -1,16 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using OdeToFood.Core;
+using OdeToFood.Data;
 
 namespace OdeToFood.Pages.Restauraunts
 {
     public class DetailModel : PageModel
     {
+        private readonly IRestaurauntData restaurauntData;
         public Restauraunt Restauraunt { get; set; }
+        public IRestaurauntData RestaurauntData { get; }
 
-        public void OnGet(int restaurauntId)
+        public DetailModel(IRestaurauntData restaurauntData)
         {
-            Restauraunt = new Restauraunt();
-            Restauraunt.Id = restaurauntId;
+            this.restaurauntData = restaurauntData;
+        }
+
+        public IActionResult OnGet(int restaurauntId)
+        {
+            Restauraunt = restaurauntData.GetById(restaurauntId);
+            if (Restauraunt == null)
+            {
+                return RedirectToPage("./NotFound");
+            }
+            return Page();
         }
     }
 }
